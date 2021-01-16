@@ -1,0 +1,8 @@
+[user]
+	name = Chetan Kini
+	email = ckini123@gmail.com
+[core]
+	editor = nvim
+[commit]
+	template = /home/ckini/.git-commit-template.txt
+	cleanup = strip
