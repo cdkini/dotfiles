@@ -142,7 +142,6 @@ bind '"\C-f":"fcd\n"'
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
-
 # FUNCTIONS
 # Uses fzf to find a file and open in Vim
 fv() { 
