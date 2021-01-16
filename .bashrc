@@ -143,6 +143,7 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
 # FUNCTIONS
+
 # Uses fzf to find a file and open in Vim
 fv() { 
     fd -t f -H -I | fzf -m --preview='batcat --color "always" {}' | xargs -ro -d "\n" nvim 2>&-
@@ -167,5 +168,4 @@ mcd() {
 vcconfig() {
     dotfiles add .bashrc .config/nvim/init.vim .config/nvim/coc-settings.json .fzf.bash .git-commit-template.txt .gitconfig .tmux.conf
     dotfiles commit -m "`date`"
-    dotfiles push origin master
 }
