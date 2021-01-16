@@ -168,4 +168,5 @@ mcd() {
 vcconfig() {
     dotfiles add .bashrc .config/nvim/init.vim .config/nvim/coc-settings.json .fzf.bash .git-commit-template.txt .gitconfig .tmux.conf
     dotfiles commit -m "`date`"
+    dotfiles push origin master
 }
