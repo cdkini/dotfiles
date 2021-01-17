@@ -166,10 +166,6 @@ mcd() {
 
 # Version control dotfiles
 vcd() {
-    changes=$(dotfiles status | awk '/modified/ {print $2}')
-    for file in $changes; do
-        dotfiles add $file
-    done
-    dotfiles commit -m "`date`"
+    dotfiles commit -am "`date`"
 }
 
