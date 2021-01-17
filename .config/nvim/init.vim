@@ -128,7 +128,7 @@ call plug#end()
 
 " GRUVBOX:
 " {{{
-  colorscheme gruvbox8_hard
+  colorscheme gruvbox8_soft
 " }}}
 
 " AIRLINE: Tabline
