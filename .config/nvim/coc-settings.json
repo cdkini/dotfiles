@@ -1,6 +1,7 @@
 {
   "diagnostic.displayByAle": true,
   "python.analysis.diagnosticEnabled": false,
+  "python.formatting.provider": "black",
   "coc.preferences.formatOnSaveFiletypes": [
     "json",
     "css",
@@ -14,8 +15,15 @@
   "languageserver": {
     "golang": {
       "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ],
       "initializationOptions": {
         "usePlaceholders": true
       }
