@@ -100,11 +100,11 @@ let g:ale_disable_lsp = 1
 call plug#begin()
 " {{{
 " GENERAL:
-  Plug 'morhetz/gruvbox'                                          " 1. Color scheme
+  Plug 'lifepillar/vim-gruvbox8'                                  " 1. Color scheme
   Plug 'vim-airline/vim-airline'                                  " 2. Tabline
   Plug 'vim-airline/vim-airline-themes'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " 3. Intellisense
-  Plug 'sheerun/vim-polyglot'                                     " 4. Syntax highlighting
+  " Plug 'sheerun/vim-polyglot'                                     " 4. Syntax highlighting
   Plug 'tpope/vim-eunuch'                                         " 5. UNIX file operations 
   Plug 'tpope/vim-fugitive'                                       " 6. Git commands
   Plug 'mhinz/vim-signify'                                        " 7. Gutter diffs
@@ -118,19 +118,16 @@ call plug#begin()
   Plug 'dense-analysis/ale'                                       " 14. Linting
   Plug 'preservim/tagbar'                                         " 15. Tagbar
   Plug 'mbbill/undotree'                                          " 16. Undo tree
+  Plug 'luochen1990/rainbow'                                      " 17. Rainbow brackets
 
 " LANGUAGE SPECIFIC:
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }              " Go
-" {{{
-  let g:go_def_mode='gopls'
-  let g:go_info_mode='gopls'
-" }}}
 
 call plug#end()
 
 " GRUVBOX: 
 " {{{
-  colorscheme gruvbox
+  colorscheme gruvbox8_hard
 " }}}
 
 " AIRLINE: Tabline
@@ -214,6 +211,13 @@ call plug#end()
   let g:goyo_width=120
 " }}}
 
+" ALE:
+" {{{
+  let b:ale_fixers=["prettier"]
+  let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+  let g:ale_fix_on_save=1
+" }}}
+
 " TAGBAR:
 " {{{
   let g:tagbar_width=30
@@ -224,6 +228,11 @@ call plug#end()
 " {{{
   let g:undotree_WindowLayout=2
   nnoremap <leader>tu :UndotreeToggle<CR>
+" }}}
+
+" RAINBOW:
+" {{{
+  let g:rainbow_active=1
 " }}}
 
 " GOLANG:
