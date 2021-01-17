@@ -164,7 +164,12 @@ mcd() {
     mkdir -p -- "$1" && cd -P -- "$1"
 }
 
-vcconfig() {
-    dotfiles commit -am "`date`"
+# Version control dotfiles
+vcd() {
+    changes=$(dotfiles status | awk '/modified/ {print $2}')
+    for file in $changes; do
+        dotfiles add $file
+    done
+    dotfiles commit -m "`date`"
 }
 

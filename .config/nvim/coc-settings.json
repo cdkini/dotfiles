@@ -1,5 +1,6 @@
 {
   "diagnostic.displayByAle": true,
+  "python.analysis.diagnosticEnabled": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "json",
     "css",

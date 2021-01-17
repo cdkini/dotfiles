@@ -1,5 +1,5 @@
 let mapleader=" "
-set nocompatible                        
+set nocompatible
 
 " =====================================================================================================================
 "                                                       DEFAULTS
@@ -42,7 +42,7 @@ set nocompatible
 
 " GENERAL REMAPS:
 " {{{
-  " Remap <Esc>  
+  " Remap <Esc>
   inoremap jk <Esc>
   inoremap kj <Esc>
 
@@ -53,8 +53,8 @@ set nocompatible
   nnoremap <silent> <leader>l :call WinMove('l')<CR>
 
   " Source/open vimrc
-  nnoremap <leader>sv :source $MYVIMRC<CR>
-  nnoremap <leader>ev :e $MYVIMRC<CR>
+  nnoremap <leader>vs :source $MYVIMRC<CR>
+  nnoremap <leader>ve :e $MYVIMRC<CR>
 
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
@@ -104,13 +104,13 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'                                  " 2. Tabline
   Plug 'vim-airline/vim-airline-themes'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " 3. Intellisense
-  " Plug 'sheerun/vim-polyglot'                                     " 4. Syntax highlighting
-  Plug 'tpope/vim-eunuch'                                         " 5. UNIX file operations 
+  Plug 'sheerun/vim-polyglot'                                     " 4. Syntax highlighting
+  Plug 'tpope/vim-eunuch'                                         " 5. UNIX file operations
   Plug 'tpope/vim-fugitive'                                       " 6. Git commands
   Plug 'mhinz/vim-signify'                                        " 7. Gutter diffs
   Plug 'yuttie/comfortable-motion.vim'                            " 8. Smooth scrolling
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }             " 9. Fuzzy finding
-  Plug 'junegunn/fzf.vim' 
+  Plug 'junegunn/fzf.vim'
   Plug 'tmsvg/pear-tree'                                          " 10. Auto pairs
   Plug 'junegunn/goyo.vim'                                        " 11. Distraction-free mode
   Plug 'tpope/vim-surround'                                       " 12. Surround editing
@@ -119,27 +119,28 @@ call plug#begin()
   Plug 'preservim/tagbar'                                         " 15. Tagbar
   Plug 'mbbill/undotree'                                          " 16. Undo tree
   Plug 'luochen1990/rainbow'                                      " 17. Rainbow brackets
+  Plug 'vimwiki/vimwiki'
 
 " LANGUAGE SPECIFIC:
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }              " Go
 
 call plug#end()
 
-" GRUVBOX: 
+" GRUVBOX:
 " {{{
   colorscheme gruvbox8_hard
 " }}}
 
 " AIRLINE: Tabline
 " {{{
-  let g:airline_theme='luna'
+  let g:airline_theme='wombat'
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tagbar#enabled = 0
   let g:airline#extensions#tabline#buffers_label = ''
   let g:airline#extensions#tabline#formatter = 'unique_tail'
 " }}}
 
-" COC: 
+" COC:
 " {{{
   " Set node path
   let g:coc_node_path='/usr/bin/nodejs'
@@ -185,7 +186,7 @@ call plug#end()
   let g:comfortable_motion_scroll_up_key = "k"
 " }}}
 
-" FZF: 
+" FZF:
 " {{{
   " Ctrl + P uses fzf to search project files
   nnoremap <silent> <C-p> :GFiles<CR>
@@ -216,6 +217,7 @@ call plug#end()
   let b:ale_fixers=["prettier"]
   let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
   let g:ale_fix_on_save=1
+  let g:ale_set_highlights=0
 " }}}
 
 " TAGBAR:
@@ -315,4 +317,3 @@ function! s:check_back_space() abort
  let col = col('.') - 1
  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
