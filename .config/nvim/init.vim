@@ -34,6 +34,7 @@ set nocompatible
   set bg=dark                             " Color scheme
   set nohlsearch                          " Remove highlighting after search
   set scrolloff=10                        " Improved view while scrolling
+  set termguicolors                       " Enables certain visuals
   set hidden                              " Required by CoC
   set signcolumn=yes                      " Required by CoC
   set nobackup                            " Required by CoC
@@ -119,7 +120,8 @@ call plug#begin()
   Plug 'preservim/tagbar'                                         " 15. Tagbar
   Plug 'mbbill/undotree'                                          " 16. Undo tree
   Plug 'luochen1990/rainbow'                                      " 17. Rainbow brackets
-  Plug 'vimwiki/vimwiki'
+  Plug 'vimwiki/vimwiki'                                          " 18. Notetaking
+  Plug 'Yggdroot/indentLine'                                      " 19. Indent markers
 
 " LANGUAGE SPECIFIC:
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }              " Go
