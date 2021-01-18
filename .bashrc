@@ -171,5 +171,6 @@ vcd() {
         dotfiles add $file
     done
     dotfiles commit -m "`date`"
+    dotfiles push origin master
 }
 
