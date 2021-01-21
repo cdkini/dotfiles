@@ -33,13 +33,13 @@ call plug#begin()
         Plug 'mbbill/undotree'                                      " Undo tree               [plugins/misc/undotree.vim]
         Plug 'luochen1990/rainbow'                                  " Rainbow brackets        [plugins/misc/rainbow.vim]
         Plug 'junegunn/goyo.vim'                                    " Distraction-free mode   [plugins/misc/goyo.vim]
-        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/misc/fzf.vim]
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/misc/fzf.vim]
+        Plug 'junegunn/fzf.vim'
         Plug 'sheerun/vim-polyglot'                                 " Syntax highlighting
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
         Plug 'mhinz/vim-signify'                                    " Gutter diffs
-        Plug 'junegunn/fzf.vim'
         Plug 'tpope/vim-surround'                                   " Surround editing
         Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'vimwiki/vimwiki'                                      " Notetaking
@@ -69,4 +69,3 @@ call plug#end()
 
   " Lang
     source $HOME/.config/nvim/settings/plugins/lang/vim-go.vim
-
