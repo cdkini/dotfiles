@@ -25,7 +25,7 @@ call plug#begin()
 
     " CODE:
         Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
-        Plug 'dense-analysis/ale'                                   " Linting                 [plugins/code/ale.vim]
+        " Plug 'dense-analysis/ale'                                   " Linting                 [plugins/code/ale.vim]
         Plug 'tmsvg/pear-tree'                                      " Auto pairs              [plugins/code/pear-tree.vim]
 
     " MISC:
@@ -55,7 +55,7 @@ call plug#end()
 
   " Code
     source $HOME/.config/nvim/settings/plugins/code/coc.vim
-    source $HOME/.config/nvim/settings/plugins/code/ale.vim
+    " source $HOME/.config/nvim/settings/plugins/code/ale.vim
     source $HOME/.config/nvim/settings/plugins/code/pear-tree.vim
 
   " Misc

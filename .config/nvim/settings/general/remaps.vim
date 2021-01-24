@@ -11,8 +11,8 @@
   nnoremap <silent> <leader>l :call WinMove('l')<CR>
 
   " Source/open vimrc
-  nnoremap <leader>sv :source $MYVIMRC<CR>
-  nnoremap <leader>ev :e $MYVIMRC<CR>
+  nnoremap <leader>vs :source $MYVIMRC<CR>
+  nnoremap <leader>ve :e $MYVIMRC<CR>
 
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
