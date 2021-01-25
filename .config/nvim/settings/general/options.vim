@@ -17,7 +17,7 @@
   set ignorecase                            " Ignores case used in search query
   set smartcase                             " Disables ignorecase if any caps are used in search query
   set noswapfile                            " Prevents creation of .swp files, which store changes made to buffers
-  set updatetime=50                         " Faster completion
+  set updatetime=100                        " Faster completion
   set timeoutlen=500                        " Time for a mapped sequence to complete (default is 1000ms)
   set formatoptions-=cro                    " Stop newline continuation of comments
   set clipboard=unnamedplus                 " Copy paste between vim and everything else

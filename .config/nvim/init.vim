@@ -54,9 +54,9 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/theme/airline.vim
 
   " Code
+    source $HOME/.config/nvim/settings/plugins/code/pear-tree.vim
     source $HOME/.config/nvim/settings/plugins/code/completion.vim
     source $HOME/.config/nvim/settings/plugins/code/lspconfig.vim
-    source $HOME/.config/nvim/settings/plugins/code/pear-tree.vim
 
   " Misc
     source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
