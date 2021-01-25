@@ -14,18 +14,18 @@ source $HOME/.config/nvim/settings/general/helpers.vim
 " =====================================================================================================================
 "                                                       PLUGINS
 " =====================================================================================================================
-let g:ale_disable_lsp = 1
 
-" Plugins
-call plug#begin()
+" Plugin Imports
+call plug#begin('$HOME/.config/nvim/plugged')
+
   " THEME:
         Plug 'lifepillar/vim-gruvbox8'                              " Color scheme            [plugins/theme/gruvbox.vim]
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
         Plug 'vim-airline/vim-airline-themes'
-
+ 
     " CODE:
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
-        " Plug 'dense-analysis/ale'                                   " Linting                 [plugins/code/ale.vim]
+        Plug 'neovim/nvim-lspconfig'
+        Plug 'nvim-lua/completion-nvim'
         Plug 'tmsvg/pear-tree'                                      " Auto pairs              [plugins/code/pear-tree.vim]
 
     " MISC:
@@ -42,20 +42,20 @@ call plug#begin()
         Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
-        Plug 'tpope/vim-surround'                                   " Surround editing
+        Plug 'tpope/vim-surround'                                   " Surround editing       
+        Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
 
-    " LANG:
-        Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }          " Go                      [plugins/lang/vim-go.vim]
 call plug#end()
 
 " Plugin Settings
+
   " Theme
     source $HOME/.config/nvim/settings/plugins/theme/gruvbox.vim
     source $HOME/.config/nvim/settings/plugins/theme/airline.vim
 
   " Code
-    source $HOME/.config/nvim/settings/plugins/code/coc.vim
-    " source $HOME/.config/nvim/settings/plugins/code/ale.vim
+    source $HOME/.config/nvim/settings/plugins/code/completion.vim
+    source $HOME/.config/nvim/settings/plugins/code/lspconfig.vim
     source $HOME/.config/nvim/settings/plugins/code/pear-tree.vim
 
   " Misc
@@ -65,5 +65,3 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/tagbar.vim
     source $HOME/.config/nvim/settings/plugins/misc/undotree.vim
 
-  " Lang
-    source $HOME/.config/nvim/settings/plugins/lang/vim-go.vim

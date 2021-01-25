@@ -1,9 +1,5 @@
 " GENERAL REMAPS:
 " {{{
-  " Remap <Esc>
-  inoremap jk <Esc>
-  inoremap kj <Esc>
-
   " Navigate and create splits
   nnoremap <silent> <leader>h :call WinMove('h')<CR>
   nnoremap <silent> <leader>j :call WinMove('j')<CR>
@@ -20,4 +16,7 @@
   " Close current/all other buffers
   nnoremap <leader>dd :bd!<CR>
   nnoremap <leader>da :w <bar> %bd <bar> e# <bar> bd# <CR>
+
+  " Remove highlights
+  nnoremap <silent><leader>n :noh<CR>
 " }}}
