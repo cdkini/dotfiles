@@ -24,9 +24,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vim-airline/vim-airline-themes'
  
     " CODE:
-        Plug 'neovim/nvim-lspconfig'
-        Plug 'nvim-lua/completion-nvim'
         Plug 'tmsvg/pear-tree'                                      " Auto pairs              [plugins/code/pear-tree.vim]
+        Plug 'neovim/nvim-lspconfig'                                " Native LSP              [plugins/code/lspconfig.vim]
+        Plug 'nvim-lua/completion-nvim'                             " Hints/tab completion    [plugins/code/completion.vim] 
+        Plug 'anott03/nvim-lspinstall'                              " Install lang servers 
+
 
     " MISC:
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]

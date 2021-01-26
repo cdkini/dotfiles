@@ -1,5 +1,9 @@
 " GENERAL REMAPS:
 " {{{
+  " Remap <Esc>
+  inoremap jk <Esc>
+  inoremap kj <Esc>
+  
   " Navigate and create splits
   nnoremap <silent> <leader>h :call WinMove('h')<CR>
   nnoremap <silent> <leader>j :call WinMove('j')<CR>
