@@ -29,7 +29,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'nvim-lua/completion-nvim'                             " Hints/tab completion    [plugins/code/completion.vim] 
         Plug 'anott03/nvim-lspinstall'                              " Install lang servers 
 
-
     " MISC:
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'preservim/tagbar'                                     " Tagbar                  [plugins/misc/tagbar.vim]
