@@ -174,3 +174,4 @@ vcd() {
     dotfiles push origin master
 }
 
+eval "$(starship init bash)"
