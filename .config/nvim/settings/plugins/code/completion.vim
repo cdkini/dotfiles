@@ -22,4 +22,4 @@ let g:compe.source.snippets_nvim = v:true
 
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-Space> compe#close('<C-e>')
+inoremap <silent><expr> <C-c> compe#close('<C-e>')
