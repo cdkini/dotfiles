@@ -146,7 +146,8 @@ bind "set show-all-if-ambiguous on"
 
 # Uses fzf to find a file and open in Vim
 fv() { 
-    fd -t f -H -I | fzf -m --preview='batcat --color "always" {}' | xargs -ro -d "\n" nvim 2>&-
+    nvim $(fzf -m --preview='batcat --color "always" {}')
+    # fd -t f -H -I | fzf -m --preview='batcat --color "always" {}' | xargs -ro -d "\n" nvim 2>&-
 }
 
 # Uses fzf to change directories
