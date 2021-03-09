@@ -24,7 +24,7 @@ set nocompatible
   set ignorecase                            " Ignores case used in search query
   set smartcase                             " Disables ignorecase if any caps are used in search query
   set noswapfile                            " Prevents creation of .swp files, which store changes made to buffers
-  set updatetime=20                        " Faster completion
+  set updatetime=20                         " Faster completion
   set timeoutlen=500                        " Time for a mapped sequence to complete (default is 1000ms)
   set formatoptions-=cro                    " Stop newline continuation of comments
   set clipboard=unnamedplus                 " Copy paste between vim and everything else
@@ -43,7 +43,7 @@ set nocompatible
   " Remap <Esc>
   inoremap jk <Esc>
   inoremap kj <Esc>
-  
+
   " Navigate and create splits
   nnoremap <silent> <leader>h :call WinMove('h')<CR>
   nnoremap <silent> <leader>j :call WinMove('j')<CR>
@@ -52,10 +52,14 @@ set nocompatible
 
   " Source/open vimrc
   nnoremap <leader>vs :source $MYVIMRC<CR>
-  nnoremap <leader>ve :e $MYVIMRC<CR>
+  nnoremap <leader>ve :e $HOME/.config/nvim/nightly.vim<CR>
 
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+  " TAB in general mode will move to text buffer
+  nnoremap <silent> <TAB> :bnext<CR>
+  nnoremap <silent> <S-TAB> :bprevious<CR>
 " }}}
 
 " TERMINAL SETTINGS:
@@ -119,14 +123,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
 
     " THEME:
         Plug 'christianchiarulli/nvcode-color-schemes.vim'
-        Plug 'nvim-treesitter/nvim-treesitter'
+        Plug 'nvim-treesitter/nvim-treesitter'                      " v0.5.0 color support    [plugings/theme/treesitter.vim]
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
         Plug 'vim-airline/vim-airline-themes'
- 
+
     " CODE:
-        Plug 'hrsh7th/nvim-compe'                                   " Hints/tab completion    [plugins/code/completion.vim] 
-        Plug 'glepnir/lspsaga.nvim'                                 " Improved LSP UI         [plugins/code/lspsaga.vim] 
-        Plug 'neovim/nvim-lspconfig'                                " Native LSP              [plugins/code/lspconfig.vim]
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
 
     " MISC:
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/misc/fzf.vim]
@@ -137,30 +139,28 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
-        Plug 'tpope/vim-surround'                                   " Surround editing       
+        Plug 'tpope/vim-surround'                                   " Surround editing
         Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/misc/quick-scope.vim]
 
+    " LANG:
+        Plug 'fatih/vim-go'
+
 call plug#end()
 
 " Plugin Settings
-
   " Theme
     source $HOME/.config/nvim/settings/plugins/theme/airline.vim
     source $HOME/.config/nvim/settings/plugins/theme/treesitter.vim
 
   " Code
-    source $HOME/.config/nvim/settings/plugins/code/completion.vim
-    source $HOME/.config/nvim/settings/plugins/code/lspsaga.vim
-    source $HOME/.config/nvim/settings/plugins/code/lspconfig.vim
+    source $HOME/.config/nvim/settings/plugins/code/coc.vim
 
   " Misc
     source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
     source $HOME/.config/nvim/settings/plugins/misc/fzf.vim
-    source $HOME/.config/nvim/settings/plugins/misc/goyo.vim
     source $HOME/.config/nvim/settings/plugins/misc/nerdtree.vim
     source $HOME/.config/nvim/settings/plugins/misc/undotree.vim
     source $HOME/.config/nvim/settings/plugins/misc/quick-scope.vim
-

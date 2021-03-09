@@ -1,0 +1,21 @@
+{
+  "diagnostic.errorSign": "✘",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "codeLens.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "cpp",
+    "css",
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "json",
+    "python",
+    "go",
+    "java"
+  ],
+  "coc.preferences.hoverTarget": "float"
+}
