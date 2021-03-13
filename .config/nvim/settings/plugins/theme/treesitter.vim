@@ -9,15 +9,19 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
-" configure nvcode-color-schemes
-let g:nvcode_termcolors=256
+syntax enable
 
-syntax on
-colorscheme gruvbox " Or whatever colorscheme you make
-
-
-" checks if your terminal has 24-bit color support
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
+" " checks if your terminal has 24-bit color support
+" if (has("termguicolors"))
+"     set termguicolors
+"     hi LineNr ctermbg=NONE guibg=NONE
+" endif
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
+
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext " Or whatever colorscheme you make

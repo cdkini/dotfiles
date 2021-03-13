@@ -122,7 +122,7 @@ endfunction
 call plug#begin('$HOME/.config/nvim/plugged')
 
     " THEME:
-        Plug 'christianchiarulli/nvcode-color-schemes.vim'
+        Plug 'mhartington/oceanic-next'
         Plug 'nvim-treesitter/nvim-treesitter'                      " v0.5.0 color support    [plugings/theme/treesitter.vim]
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
         Plug 'vim-airline/vim-airline-themes'
@@ -140,13 +140,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
         Plug 'tpope/vim-surround'                                   " Surround editing
-        Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/misc/quick-scope.vim]
 
-    " LANG:
-        Plug 'fatih/vim-go'
+        Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
 
 call plug#end()
 
