@@ -90,11 +90,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -111,14 +111,16 @@ source $ZSH/oh-my-zsh.sh
 # EVERYTHING BELOW THIS IS FROM .BASHRC
 # ALIASES
 alias v="nvim"
-alias g="git"
 alias fd="fdfind"
 alias bat="batcat"
 alias cht="cht.sh"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+alias tx="tmuxinator"
+alias tks="tmux kill-server"
+
 alias gs="git status"
-alias glog="git log --graph --decorate --oneline"
+alias gl="git log --graph --decorate --oneline"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -162,6 +164,33 @@ vcd() {
     done
     dotfiles commit -m "`date`"
     dotfiles push origin master
+}
+
+# Tmuxinator FZF Start
+tfs() {
+    SELECTED_PROJECTS=$(tmuxinator list -n |
+        tail -n +2 |
+        fzf --prompt="Project: " -m -1 -q "$1")
+
+    if [ -n "$SELECTED_PROJECTS" ]; then
+        # Set the IFS to \n to iterate over \n delimited projects
+        IFS=$'\n'
+
+        # Start each project without attaching
+        for PROJECT in $SELECTED_PROJECTS; do
+            tmuxinator start "$PROJECT" --no-attach # force disable attaching
+        done
+
+        # If inside tmux then select session to switch, otherwise just attach
+        if [ -n "$TMUX" ]; then
+            SESSION=$(tmux list-sessions -F "#S" | fzf --prompt="Session: ")
+            if [ -n "$SESSION" ]; then
+                tmux switch-client -t "$SESSION"
+            fi
+        else
+            tmux attach-session
+        fi
+    fi
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -36,6 +36,7 @@ set nocompatible
   set termguicolors                         " Enables certain visuals
   set completeopt=menu,menuone,noselect     " nvim LSP
   set shortmess+=c                          " nvim LSP
+  set encoding=UTF-8                        " devicons
 " }}}
 
 " GENERAL REMAPS:
@@ -128,7 +129,11 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vim-airline/vim-airline-themes'
 
     " CODE:
+        Plug 'alvan/vim-closetag'                                   " Auto-close HTML/JSX
         Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
+        Plug 'tpope/vim-commentary'                                 " Comment out
+        Plug 'tpope/vim-surround'                                   " Surround editing
+        Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/misc/quick-scope.vim]
 
     " MISC:
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/misc/fzf.vim]
@@ -136,13 +141,12 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'mbbill/undotree'                                      " Undo tree               [plugins/misc/undotree.vim]
         Plug 'mhinz/vim-signify'                                    " Gutter diffs
         Plug 'preservim/nerdtree'                                   " File explorer           [plugins/misc/nerdtree.vim]
-        Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
-        Plug 'tpope/vim-surround'                                   " Surround editing
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
-        Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/misc/quick-scope.vim]
+        Plug 'tpope/vim-repeat'                                     " Improved . support
+
 
         Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
 
