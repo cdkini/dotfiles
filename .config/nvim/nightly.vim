@@ -146,7 +146,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'tpope/vim-repeat'                                     " Improved . support
-
+        Plug 'szw/vim-maximizer'
 
         Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
 
@@ -166,3 +166,4 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/nerdtree.vim
     source $HOME/.config/nvim/settings/plugins/misc/undotree.vim
     source $HOME/.config/nvim/settings/plugins/misc/quick-scope.vim
+    source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
