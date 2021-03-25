@@ -123,6 +123,7 @@ endfunction
 call plug#begin('$HOME/.config/nvim/plugged')
 
     " THEME:
+        Plug 'christianchiarulli/nvcode-color-schemes.vim'
         Plug 'mhartington/oceanic-next'
         Plug 'nvim-treesitter/nvim-treesitter'                      " v0.5.0 color support    [plugings/theme/treesitter.vim]
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
@@ -147,6 +148,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'tpope/vim-repeat'                                     " Improved . support
         Plug 'szw/vim-maximizer'
+        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
         Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
 
@@ -166,4 +168,4 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/nerdtree.vim
     source $HOME/.config/nvim/settings/plugins/misc/undotree.vim
     source $HOME/.config/nvim/settings/plugins/misc/quick-scope.vim
-    source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
+    " source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
