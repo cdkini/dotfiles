@@ -4,7 +4,7 @@ set nocompatible
 " =====================================================================================================================
 "                                                       DEFAULTS
 " =====================================================================================================================
-
+ 
 " OPTIONS:
 " {{{
   syntax enable
@@ -54,6 +54,8 @@ set nocompatible
   " Source/open vimrc
   nnoremap <leader>vs :source $MYVIMRC<CR>
   nnoremap <leader>ve :e $HOME/.config/nvim/nightly.vim<CR>
+  nnoremap <leader>vi :PlugInstall<CR>
+  nnoremap <leader>vc :PlugClean<CR>
 
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
@@ -126,33 +128,45 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'christianchiarulli/nvcode-color-schemes.vim'
         Plug 'mhartington/oceanic-next'
         Plug 'nvim-treesitter/nvim-treesitter'                      " v0.5.0 color support    [plugings/theme/treesitter.vim]
+        Plug 'sainnhe/gruvbox-material'
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
         Plug 'vim-airline/vim-airline-themes'
+        Plug 'kyazdani42/nvim-web-devicons'
 
     " CODE:
         Plug 'alvan/vim-closetag'                                   " Auto-close HTML/JSX
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
-        Plug 'tpope/vim-commentary'                                 " Comment out
-        Plug 'tpope/vim-surround'                                   " Surround editing
-        Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/misc/quick-scope.vim]
-
-    " MISC:
-        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/misc/fzf.vim]
+        Plug 'gennaro-tedesco/nvim-peekup'                          " Register preview        [plugins/code/peekup.vim]
+        Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/code/fzf.vim]
         Plug 'junegunn/fzf.vim'
-        Plug 'mbbill/undotree'                                      " Undo tree               [plugins/misc/undotree.vim]
+        Plug 'mbbill/undotree'                                      " Undo tree               [plugins/code/undotree.vim]
         Plug 'mhinz/vim-signify'                                    " Gutter diffs
-        Plug 'preservim/nerdtree'                                   " File explorer           [plugins/misc/nerdtree.vim]
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
+        Plug 'preservim/nerdtree'                                   " File explorer           [plugins/code/nerdtree.vim]
+        Plug 'puremourning/vimspector'                              " Debugger                [plugins/code/vimspector.vim]
+        Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
+        Plug 'tpope/vim-repeat'                                     " Improved . support
+        Plug 'tpope/vim-surround'                                   " Surround editing
+        Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/code/quick-scope.vim]
+        Plug 'romgrk/barbar.nvim'                                   " Improved buffers        [plugins/code/barbar.vim]
+        Plug 'vim-test/vim-test'                                    " Test runner
+
+    " MISC:
+        Plug 'airblade/vim-rooter'                                  " Autochdir 
+        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+        Plug 'junegunn/goyo.vim'                                    " Distraction free mode   [plugins/misc/goyo.vim]
+        Plug 'liuchengxu/vim-which-key'                             " Key previews            [plugins/misc/whichkey.vim]
+        Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+        Plug 'mhinz/vim-startify'                                   " Dashboard               [plugins/misc/startify.vim]
+        Plug 'szw/vim-maximizer'                                    " Zoom in/out of buffer   [plugins/misc/maximizer.vim]
+        Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
-        Plug 'tpope/vim-repeat'                                     " Improved . support
-        Plug 'szw/vim-maximizer'
-        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-
-        Plug 'tweekmonster/startuptime.vim'                         " Performance measurement
+        Plug 'machakann/vim-highlightedyank'                        " Highlight yanks         [plugins/misc/highlightedyank.vim]
 
 call plug#end()
+
 
 " Plugin Settings
   " Theme
@@ -161,11 +175,17 @@ call plug#end()
 
   " Code
     source $HOME/.config/nvim/settings/plugins/code/coc.vim
+    source $HOME/.config/nvim/settings/plugins/code/fzf.vim
+    source $HOME/.config/nvim/settings/plugins/code/nerdtree.vim
+    source $HOME/.config/nvim/settings/plugins/code/quick-scope.vim
+    source $HOME/.config/nvim/settings/plugins/code/undotree.vim
+    source $HOME/.config/nvim/settings/plugins/code/vim-test.vim
 
   " Misc
     source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
-    source $HOME/.config/nvim/settings/plugins/misc/fzf.vim
-    source $HOME/.config/nvim/settings/plugins/misc/nerdtree.vim
-    source $HOME/.config/nvim/settings/plugins/misc/undotree.vim
-    source $HOME/.config/nvim/settings/plugins/misc/quick-scope.vim
-    " source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
+    source $HOME/.config/nvim/settings/plugins/misc/goyo.vim
+    source $HOME/.config/nvim/settings/plugins/misc/highlightedyank.vim
+    source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
+    source $HOME/.config/nvim/settings/plugins/misc/startify.vim
+    source $HOME/.config/nvim/settings/plugins/misc/whichkey.vim
+
