@@ -5,3 +5,4 @@ nmap <silent><leader>Tf :TestLast<CR>
 nmap <silent><leader>Tv :TestVisit<CR>
 
 let test#strategy="neovim"
+let test#python#runner = 'pytest'

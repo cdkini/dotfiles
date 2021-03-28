@@ -58,8 +58,11 @@ command! -nargs=0 Organize   :call     CocAction('runCommand', 'editor.action.or
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+let g:airline#extensions#coc#enabled = 1
+let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
+let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
 
 function! s:check_back_space() abort
   let col = col('.') - 1

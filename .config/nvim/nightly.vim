@@ -25,7 +25,7 @@ set nocompatible
   set smartcase                             " Disables ignorecase if any caps are used in search query
   set noswapfile                            " Prevents creation of .swp files, which store changes made to buffers
   set updatetime=20                         " Faster completion
-  set timeoutlen=500                        " Time for a mapped sequence to complete (default is 1000ms)
+  set timeoutlen=250                        " Time for a mapped sequence to complete (default is 1000ms)
   set formatoptions-=cro                    " Stop newline continuation of comments
   set clipboard=unnamedplus                 " Copy paste between vim and everything else
   set incsearch                             " Highlights search results as a search query is typed
@@ -174,12 +174,14 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/theme/treesitter.vim
 
   " Code
+    source $HOME/.config/nvim/settings/plugins/code/barbar.vim
     source $HOME/.config/nvim/settings/plugins/code/coc.vim
     source $HOME/.config/nvim/settings/plugins/code/fzf.vim
     source $HOME/.config/nvim/settings/plugins/code/nerdtree.vim
     source $HOME/.config/nvim/settings/plugins/code/quick-scope.vim
     source $HOME/.config/nvim/settings/plugins/code/undotree.vim
     source $HOME/.config/nvim/settings/plugins/code/vim-test.vim
+    source $HOME/.config/nvim/settings/plugins/code/vimspector.vim
 
   " Misc
     source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
