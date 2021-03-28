@@ -36,7 +36,6 @@ set nocompatible
   set termguicolors                         " Enables certain visuals
   set completeopt=menu,menuone,noselect     " nvim LSP
   set shortmess+=c                          " nvim LSP
-  set encoding=UTF-8                        " devicons
 " }}}
 
 " GENERAL REMAPS:
@@ -131,7 +130,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'sainnhe/gruvbox-material'
         Plug 'vim-airline/vim-airline'                              " Tabline                 [plugins/theme/airline.vim]
         Plug 'vim-airline/vim-airline-themes'
-        Plug 'kyazdani42/nvim-web-devicons'
 
     " CODE:
         Plug 'alvan/vim-closetag'                                   " Auto-close HTML/JSX
@@ -143,6 +141,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'neoclide/coc.nvim', {'branch': 'release'}             " Intellisense            [plugins/code/coc.vim]
         Plug 'preservim/nerdtree'                                   " File explorer           [plugins/code/nerdtree.vim]
         Plug 'puremourning/vimspector'                              " Debugger                [plugins/code/vimspector.vim]
+        Plug 'tiagofumo/vim-nerdtree-syntax-highlight' 
         Plug 'tpope/vim-commentary'                                 " Comment out
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
@@ -164,6 +163,10 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'machakann/vim-highlightedyank'                        " Highlight yanks         [plugins/misc/highlightedyank.vim]
+
+        " Must be last per official repo
+        Plug 'ryanoasis/vim-devicons'                               " Pretty icons
+        Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -190,4 +193,3 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
     source $HOME/.config/nvim/settings/plugins/misc/startify.vim
     source $HOME/.config/nvim/settings/plugins/misc/whichkey.vim
-
