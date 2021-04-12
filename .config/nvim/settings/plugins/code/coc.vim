@@ -26,9 +26,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Code actions
-xmap <silent> ga <Plug>(coc-codeaction-selected)
-nmap <silent> ga <Plug>(coc-codeaction-selected)
-nmap <leader> ga <Plug>(coc-codeaction)
+" xmap <silent> ga <Plug>(coc-codeaction-selected)
+" nmap <silent> ga <Plug>(coc-codeaction-selected)
+nmap <silent> ga <Plug>(coc-codeaction)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)

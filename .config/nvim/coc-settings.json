@@ -17,5 +17,5 @@
     "go",
     "java"
   ],
-  "coc.preferences.hoverTarget": "float"
+  "coc.preferences.hoverTarget": "float",
 }

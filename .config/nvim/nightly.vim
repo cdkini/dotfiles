@@ -132,7 +132,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vim-airline/vim-airline-themes'
 
     " CODE:
-        Plug 'alvan/vim-closetag'                                   " Auto-close HTML/JSX
+        Plug 'alvan/vim-closetag'                                   " Auto-close HTML/JSX     [plugins/code/closetag.vim]
         Plug 'gennaro-tedesco/nvim-peekup'                          " Register preview        [plugins/code/peekup.vim]
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/code/fzf.vim]
         Plug 'junegunn/fzf.vim'
@@ -146,10 +146,14 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'tpope/vim-eunuch'                                     " UNIX file operations
         Plug 'tpope/vim-fugitive'                                   " Git commands
         Plug 'tpope/vim-repeat'                                     " Improved . support
+        Plug 'tpope/vim-rhubarb'                                    " Go to GitHub
         Plug 'tpope/vim-surround'                                   " Surround editing
         Plug 'unblevable/quick-scope'                               " Improved in-line nav    [plugins/code/quick-scope.vim]
         Plug 'romgrk/barbar.nvim'                                   " Improved buffers        [plugins/code/barbar.vim]
         Plug 'vim-test/vim-test'                                    " Test runner
+
+    " LANG:
+        " Plug 'fatih/vim-go'                                         " Golang
 
     " MISC:
         Plug 'airblade/vim-rooter'                                  " Autochdir 
@@ -163,6 +167,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
         Plug 'machakann/vim-highlightedyank'                        " Highlight yanks         [plugins/misc/highlightedyank.vim]
+        Plug 'sakshamgupta05/vim-todo-highlight'
 
         " Must be last per official repo
         Plug 'ryanoasis/vim-devicons'                               " Pretty icons
@@ -178,6 +183,7 @@ call plug#end()
 
   " Code
     source $HOME/.config/nvim/settings/plugins/code/barbar.vim
+    source $HOME/.config/nvim/settings/plugins/code/closetag.vim
     source $HOME/.config/nvim/settings/plugins/code/coc.vim
     source $HOME/.config/nvim/settings/plugins/code/fzf.vim
     source $HOME/.config/nvim/settings/plugins/code/nerdtree.vim

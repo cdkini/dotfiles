@@ -84,19 +84,12 @@ let g:which_key_map.d = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'b' : [':GitBlameToggle'                   , 'blame'],
-      \ 'B' : [':GBrowse'                          , 'browse'],
-      \ 'd' : [':Git diff'                         , 'diff'],
-      \ 'j' : [':NextHunk'                         , 'next hunk'],
-      \ 'k' : [':PrevHunk'                         , 'prev hunk'],
-      \ 'l' : [':Git log'                          , 'log'],
-      \ 'n' : [':Neogit'                           , 'neogit'],
-      \ 'p' : [':PreviewHunk'                      , 'preview hunk'],
-      \ 'r' : [':ResetHunk'                        , 'reset hunk'],
-      \ 'R' : [':ResetBuffer'                      , 'reset buffer'],
-      \ 's' : [':StageHunk'                        , 'stage hunk'],
-      \ 'S' : [':Gstatus'                          , 'status'],
-      \ 'u' : [':UndoStageHunk'                    , 'undo stage hunk'],
+      \ 'b':  [':Gblame'                         , 'blame'],
+      \ 'c':  [':Gcommit'                        , 'commit'],
+      \ 'd':  [':SignifyDiff'                    , 'diff'],
+      \ 'g':  [':G'                              , 'status'],
+      \ 'h':  [':Gbrowse'                        , 'GitHub'],
+      \ 'l':  [':Glog'                           , 'log']
       \ }
 
 " s is for search 
@@ -125,6 +118,7 @@ let g:which_key_map.t = {
       \ 'e' : [':NERDTreeToggle'            , 'explorer'],
       \ 'm' : [':MaximizerToggle'           , 'maximizer'],
       \ 'd' : [':<C-u>CocList diagnostics'  , 'diagnostics'],
+      \ 'g' : [':SignifyToggleHighlight'    , 'git diffs'],
       \ 'z' : [':Goyo'                      , 'zen'],
       \ }
 
