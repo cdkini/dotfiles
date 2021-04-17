@@ -33,7 +33,7 @@ set nocompatible
   set bg=dark                               " Color scheme
   set nohlsearch                            " Remove highlighting after search
   set scrolloff=10                          " Improved view while scrolling
-  set termguicolors                         " Enables certain visuals
+  " set termguicolors                         " Enables certain visuals
   set completeopt=menu,menuone,noselect     " nvim LSP
   set shortmess+=c                          " nvim LSP
 " }}}
