@@ -37,6 +37,7 @@ let g:which_key_map.f = 'which_key_ignore'
 let g:which_key_map['q'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['c'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['r'] = { 'name': 'which_key_ignore' }
+let g:which_key_map['q'] = { 'name': 'which_key_ignore' }
 
 " Group mappings
 
@@ -52,7 +53,8 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'                            , 'list'],
       \ }
 
-" d is for debug
+" d is for debug 
+" TODO: OPEN TO SWITCH TO NVIM DAP
 let g:which_key_map.d = {
       \ 'name' : '+debug' ,
       \ 'c' : [':call vimspector#Continue()'                                         , 'continue'],
@@ -84,12 +86,15 @@ let g:which_key_map.d = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'b':  [':Gblame'                         , 'blame'],
-      \ 'c':  [':Gcommit'                        , 'commit'],
-      \ 'd':  [':SignifyDiff'                    , 'diff'],
-      \ 'g':  [':G'                              , 'status'],
-      \ 'h':  [':Gbrowse'                        , 'GitHub'],
-      \ 'l':  [':Glog'                           , 'log']
+      \ 'B':  [':Gblame'                                                            , 'blame file'],
+      \ 'b':  ['<cmd>lua require"gitsigns".blame_line()<CR>'                        , 'blame hunk'],
+      \ 'c':  [':Gcommit'                                                           , 'commit'],
+      \ 'g':  [':G'                                                                 , 'status'],
+      \ 'h':  [':Gbrowse'                                                           , 'github'],
+      \ 'l':  [':Glog'                                                              , 'log'],
+      \ 'p':  ['<cmd>lua require"gitsigns".preview_hunk<CR>'                        , 'preview hunk'],
+      \ 's':  ['<cmd>lua require"gitsigns".stage_hunk()<CR>'                        , 'stage hunk'],
+      \ 'u':  ['<cmd>lua require"gitsigns".undo_stage_hunk()<CR>'                   , 'undo stage hunk'],
       \ }
 
 " s is for search 
@@ -113,13 +118,12 @@ let g:which_key_map.s = {
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
-      \ 't' : [':call TermToggle(10)'       , 'terminal'],
-      \ 'u' : [':UndoTreeToggle'            , 'undotree'],
-      \ 'e' : [':NERDTreeToggle'            , 'explorer'],
-      \ 'm' : [':MaximizerToggle'           , 'maximizer'],
-      \ 'd' : [':<C-u>CocList diagnostics'  , 'diagnostics'],
-      \ 'g' : [':SignifyToggleHighlight'    , 'git diffs'],
-      \ 'z' : [':Goyo'                      , 'zen'],
+      \ 'd' : [':Lspsaga show_line_diagnostics<CR>'                       , 'diagnostics'],
+      \ 't' : [':call TermToggle(10)'                                     , 'terminal'],
+      \ 'u' : [':UndoTreeToggle'                                          , 'undotree'],
+      \ 'e' : [':CHADopen'                                                , 'explorer'],
+      \ 'm' : [':MaximizerToggle'                                         , 'maximizer'],
+      \ 'z' : [':Goyo'                                                    , 'zen'],
       \ }
 
 " T is for test
@@ -135,7 +139,7 @@ let g:which_key_map.T = {
 " v is for vim
 let g:which_key_map.v = {
       \ 'name' : '+vim' ,
-      \ 'e' : [':e $HOME/.config/nvim/nightly.vim'      , 'edit'],
+      \ 'e' : [':e $HOME/.config/nvim/init.vim'      , 'edit'],
       \ 's' : [':source $MYVIMRC'                       , 'source'],
       \ 'i' : [':PlugInstall'                           , 'install'],
       \ 'c' : [':PlugClean'                             , 'clean'],

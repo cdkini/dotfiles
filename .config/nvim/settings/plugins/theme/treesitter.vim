@@ -26,10 +26,13 @@ endif
 " let g:oceanic_next_terminal_italic = 1
 " colorscheme OceanicNext 
 
-let g:gruvbox_material_background = 'soft'
-" let g:gruvbox_material_diagnostic_line_highlight = 1
-let g:gruvbox_material_enable_italic = 1
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_menu_selection_background = 'green'
-let g:gruvbox_material_palette = 'material'
-colorscheme gruvbox-material 
+" let g:gruvbox_material_background = 'soft'
+" let g:gruvbox_material_enable_italic = 1
+" let g:gruvbox_material_enable_bold = 1
+" let g:gruvbox_material_menu_selection_background = 'green'
+" let g:gruvbox_material_palette = 'material'
+" colorscheme gruvbox-material 
+
+colorscheme everforest
+let g:everforest_enable_italic = 1
+let g:everforest_background = 'soft'

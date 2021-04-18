@@ -3,7 +3,7 @@
   syntax enable
   set splitbelow                            " Horizontal splits will automatically be below
   set noerrorbells                          " No annoying noises
-  set cmdheight=2                           " Give more space for displaying messages
+  set cmdheight=1                           " Give more space for displaying messages
   set tabstop=4                             " Number of spaces a <Tab> is equivalent to
   set softtabstop=4                         " Number of spaces a <Tab> counts for while performing edits
   set shiftwidth=4                          " Number of spaces used for each step of autoindent

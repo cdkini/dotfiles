@@ -3,7 +3,7 @@
   " Remap <Esc>
   inoremap jk <Esc>
   inoremap kj <Esc>
-  
+
   " Navigate and create splits
   nnoremap <silent> <leader>h :call WinMove('h')<CR>
   nnoremap <silent> <leader>j :call WinMove('j')<CR>
@@ -12,15 +12,14 @@
 
   " Source/open vimrc
   nnoremap <leader>vs :source $MYVIMRC<CR>
-  nnoremap <leader>ve :e $MYVIMRC<CR>
+  nnoremap <leader>ve :e $HOME/.config/nvim/init.vim<CR>
+  nnoremap <leader>vi :PlugInstall<CR>
+  nnoremap <leader>vc :PlugClean<CR>
 
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
-  " Close current/all other buffers
-  nnoremap <leader>dd :bd!<CR>
-  nnoremap <leader>da :w <bar> %bd <bar> e# <bar> bd# <CR>
-
-  " Remove highlights
-  nnoremap <silent><leader>n :noh<CR>
+  " TAB in general mode will move to text buffer
+  nnoremap <silent> <TAB> :bnext<CR>
+  nnoremap <silent> <S-TAB> :bprevious<CR>
 " }}}
