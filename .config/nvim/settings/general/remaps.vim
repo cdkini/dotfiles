@@ -19,7 +19,4 @@
   " cd to current buffer
   nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
-  " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext<CR>
-  nnoremap <silent> <S-TAB> :bprevious<CR>
 " }}}

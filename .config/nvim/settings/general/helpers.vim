@@ -34,4 +34,7 @@ function! TermToggle(height)
         let g:term_win = win_getid()
     endif
 endfunction
+
+command! BufOnly execute '%bdelete|edit #|normal `"'
+
 " }}}

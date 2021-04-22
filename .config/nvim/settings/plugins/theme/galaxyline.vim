@@ -4,8 +4,8 @@
     -- local colors = require('galaxyline.theme').default
     local colors = {
         -- bg = '#2E2E2E',
-        bg = '#292D38',
-        -- bg = '#f4f3a4',
+        -- bg = '#292D38',
+        bg = '#A3BE8C',
         yellow = '#DCDCAA',
         dark_yellow = '#D7BA7D',
         cyan = '#4EC9B0',
@@ -15,7 +15,7 @@
         orange = '#FF8800',
         purple = '#C586C0',
         magenta = '#D16D9E',
-        grey = '#858585',
+        grey = '#3B4252',
         blue = '#569CD6',
         vivid_blue = '#4FC1FF',
         light_blue = '#9CDCFE',
