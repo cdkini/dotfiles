@@ -9,3 +9,7 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeLimitedSyntax = 1
+
+if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+endif

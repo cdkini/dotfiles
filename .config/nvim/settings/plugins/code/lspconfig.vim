@@ -12,12 +12,10 @@
         vim.cmd("nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>")
         vim.cmd("nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>")
         vim.cmd("nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>")
-        vim.cmd("nnoremap <silent> ca :Lspsaga code_action<CR>")
-        vim.cmd("nnoremap <silent> K :Lspsaga hover_doc<CR>")
-        vim.cmd("nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>")
-        vim.cmd("nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>")
-        vim.cmd("nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>")
-        vim.cmd("nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>")
+        vim.cmd("nnoremap <silent> ca <cmd>lua vim.lsp.buf.code_action()<CR>")
+        vim.cmd("nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>")
+        vim.cmd("nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+        vim.cmd("nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
 
       -- Set autocommands conditional on server_capabilities
 --      if client.resolved_capabilities.document_highlight then
@@ -34,20 +32,13 @@
 --      end
 --    end
 
-    -- Use a loop to conveniently both setup defined servers 
-    -- and map buffer local keybindings when the language server attaches
-    -- local servers = { "pyright", "gopls"}
-    -- for _, lsp in ipairs(servers) do
---       nvim_lsp[lsp].setup { on_attach = on_attach }
-  --   end
-
---     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---      vim.lsp.diagnostic.on_publish_diagnostics, {
---        virtual_text = false,
---        underline = true,
---        signs = true,
---      }
---    )
+     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+        underline = true,
+        signs = true,
+      }
+    )
 --     vim.cmd [[autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
 --     vim.cmd [[autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()]]
 
@@ -68,6 +59,23 @@
         {texthl = "LspDiagnosticsSignInformation", text = "", numhl = "LspDiagnosticsSignInformation"}
     )
 
-    require'lspconfig'.pyright.setup{}
+    require'lspconfig'.pyright.setup{
+        settings = {
+            python = {
+                analysis = {
+                    typeCheckingMode = "basic",
+                    autoSearchPaths = true,
+                    diagnosticMode = "workspace",
+                    useLibraryCodeForTypes = true,
+                    diagnosticSeverityOverrides = {
+                        reportGeneralTypeIssues = "warning",
+                        reportPropertyTypeMismatch = "warning",
+                        reportTypedDictNotRequiredAccess = "warning"
+                    }
+                }
+            }
+        }
+    }
+
     require'lspconfig'.gopls.setup{}
 EOF

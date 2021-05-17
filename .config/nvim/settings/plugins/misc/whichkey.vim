@@ -26,18 +26,16 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 let g:which_key_map[';'] = [ ':Startify'            , 'dashboard' ]
-let g:which_key_map['"'] = [ '<Plug>PeekupOpen'     , 'registers' ]
 let g:which_key_map['='] = [ '<C-w>='               , 'align splits' ]
-let g:which_key_map['f'] = [ ':Neoformat'           , 'format' ]
 
 let g:which_key_map.h = 'which_key_ignore'
 let g:which_key_map.j = 'which_key_ignore'
 let g:which_key_map.k = 'which_key_ignore'
 let g:which_key_map.l = 'which_key_ignore'
 let g:which_key_map['q'] = { 'name': 'which_key_ignore' }
+let g:which_key_map['w'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['c'] = { 'name': 'which_key_ignore' }
 let g:which_key_map['r'] = { 'name': 'which_key_ignore' }
-let g:which_key_map['q'] = { 'name': 'which_key_ignore' }
 
 " Group mappings
 
@@ -119,12 +117,11 @@ let g:which_key_map.s = {
 " t is for toggle
 let g:which_key_map.t = {
       \ 'name' : '+toggle' ,
-      \ 'd' : [':Lspsaga show_line_diagnostics<CR>'                       , 'diagnostics'],
+      \ 'd' : [':TroubleToggle lsp_document_diagnostics'                  , 'diagnostics'],
       \ 't' : [':call TermToggle(10)'                                     , 'terminal'],
       \ 'u' : [':UndoTreeToggle'                                          , 'undotree'],
       \ 'e' : [':NERDTreeToggle'                                          , 'explorer'],
       \ 'm' : [':MaximizerToggle'                                         , 'maximizer'],
-      \ 'z' : [':Goyo'                                                    , 'zen'],
       \ }
 
 " T is for test
@@ -145,18 +142,6 @@ let g:which_key_map.v = {
       \ 'i' : [':PlugInstall'                           , 'install'],
       \ 'c' : [':PlugClean'                             , 'clean'],
       \ }
-
-" w is for wiki
-let g:which_key_map.w = {
-      \ 'name' : '+wiki' ,
-      \ 'w' : [':<Plug>VimwikiIndex'         , 'curr'],
-      \ 't' : [':<Plug>VimwikiTabIndex'      , 'tab'],
-      \ 'i' : [':<Plug>VimwikiDiaryIndex'    , 'diary'],
-      \ 's' : [':<Plug>VimwikiUISelect'      , 'select'],
-      \ 'd' : [':<Plug>VimwikiDeleteFile'    , 'delete'],
-      \ 'r' : [':<Plug>VimwikiRenameFile'    , 'rename'],
-      \ }
-
 
 " call which_key#register('<Space>', "g:which_key_map")
 autocmd! User vim-which-key call which_key#register('<Space>', 'g:which_key_map')
