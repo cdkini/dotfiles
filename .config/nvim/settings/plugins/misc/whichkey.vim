@@ -111,6 +111,7 @@ let g:which_key_map.s = {
       \ 'h' : [':History'      , 'file history'],
       \ 'H' : [':History:'     , 'cmd history'],
       \ 'l' : [':Lines'        , 'lines'] ,
+      \ 'm' : [':Marks'        , 'marks'] ,
       \ 'p' : [':Rg'           , 'project'],
       \ }
 

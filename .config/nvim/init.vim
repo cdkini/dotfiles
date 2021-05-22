@@ -33,17 +33,17 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " v0.5.0 color support    [plugins/theme/treesitter.vim]
 
     " CODE:
-        Plug 'airblade/vim-rooter'                                  " Auto chdir
+        Plug 'ahmedkhalf/lsp-rooter.nvim'                           " Auto chdir using LSP
         Plug 'folke/trouble.nvim'                                   " Better diagnostics
-        " Plug 'glepnir/lspsaga.nvim'                                 " LSP improvements        [plugins/code/lspsaga.vim]
         Plug 'hrsh7th/nvim-compe'                                   " LSP completion          [plugins/code/compe.vim]
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }         " Fuzzy finding           [plugins/code/fzf.vim]
         Plug 'junegunn/fzf.vim'
-        Plug 'ojroques/nvim-lspfuzzy'                               " FZF for LSP
+        Plug 'kshenoy/vim-signature'                                " Marks in gutter
         Plug 'lewis6991/gitsigns.nvim'                              " Cleaner git gutters     [plugins/code/gitsigns.vim]
         Plug 'mbbill/undotree'                                      " Undo tree               [plugins/code/undotree.vim]
         Plug 'neovim/nvim-lspconfig'                                " v0.5.0 LSP!             [plugins/code/lspconfig.vim]
         Plug 'nvim-lua/plenary.nvim'                                " Gitsigns helper funcs
+        Plug 'ojroques/nvim-lspfuzzy'                               " FZF for LSP
         Plug 'preservim/nerdtree'                                   " File explorer           [plugins/code/nerdtree.vim]
         Plug 'romgrk/barbar.nvim'                                   " Improved buffers        [plugins/code/barbar.vim]
         Plug 'tiagofumo/vim-nerdtree-syntax-highlight'              " Explorer utils
@@ -57,6 +57,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vim-test/vim-test'                                    " Test runner
 
     " MISC:
+        Plug 'Yggdroot/indentLine'                                  " Indent markers
         Plug 'liuchengxu/vim-which-key'                             " Key previews            [plugins/misc/whichkey.vim]
         Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
         Plug 'machakann/vim-highlightedyank'                        " Highlight yanks         [plugins/misc/highlightedyank.vim]
@@ -66,16 +67,17 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
 
-        " YAK SHAVING
+        " Debugging!
         " Plug 'mfussenegger/nvim-dap'
+        " Plug 'mfussenegger/nvim-dap-python'
         " Plug 'theHamsta/nvim-dap-virtual-text'
 
         " Must be last per official repo
         Plug 'ryanoasis/vim-devicons'                               " Pretty icons
-        Plug 'kyazdani42/nvim-web-devicons'
-
+        Plug 'kyazdani42/nvim-web-devicons'                         " More pretty icons
 
 call plug#end()
+
 
 " PLUGIN SETTINGS:
   " THEME:
@@ -89,11 +91,12 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/code/gitsigns.vim
     source $HOME/.config/nvim/settings/plugins/code/lspconfig.vim
     source $HOME/.config/nvim/settings/plugins/code/lspfuzzy.vim
-    " source $HOME/.config/nvim/settings/plugins/code/lspsaga.vim
     source $HOME/.config/nvim/settings/plugins/code/nerdtree.vim
     source $HOME/.config/nvim/settings/plugins/code/quick-scope.vim
     source $HOME/.config/nvim/settings/plugins/code/undotree.vim
     source $HOME/.config/nvim/settings/plugins/code/vim-test.vim
+    source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
+    source $HOME/.config/nvim/settings/plugins/misc/highlightedyank.vim
 
   " MISC:
     source $HOME/.config/nvim/settings/plugins/misc/comfortable-motion.vim
@@ -101,4 +104,3 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
     source $HOME/.config/nvim/settings/plugins/misc/startify.vim
     source $HOME/.config/nvim/settings/plugins/misc/whichkey.vim
-
