@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/ckini/.oh-my-zsh"
 export PATH="~/go/bin:$PATH"
+export EDITOR="/usr/local/bin/nvim"
 export GO111MODULE=auto
 
 # Set name of the theme to load --- if set to "random", it will

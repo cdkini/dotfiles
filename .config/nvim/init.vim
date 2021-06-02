@@ -67,11 +67,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'vimwiki/vimwiki'                                      " Notetaking
         Plug 'yuttie/comfortable-motion.vim'                        " Smooth scrolling        [plugins/misc/comfortable-motion.vim]
 
-        " Debugging!
-        " Plug 'mfussenegger/nvim-dap'
-        " Plug 'mfussenegger/nvim-dap-python'
-        " Plug 'theHamsta/nvim-dap-virtual-text'
-
         " Must be last per official repo
         Plug 'ryanoasis/vim-devicons'                               " Pretty icons
         Plug 'kyazdani42/nvim-web-devicons'                         " More pretty icons

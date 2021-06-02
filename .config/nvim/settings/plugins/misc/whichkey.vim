@@ -50,36 +50,6 @@ let g:which_key_map.b = {
       \ '?' : ['Buffers'                            , 'list'],
       \ }
 
-" d is for debug 
-" TODO: OPEN TO SWITCH TO NVIM DAP
-let g:which_key_map.d = {
-      \ 'name' : '+debug' ,
-      \ 'c' : [':call vimspector#Continue()'                                         , 'continue'],
-      \ 'd' : [':call vimspector#Launch()'                                           , 'open'],
-      \ 'q' : [':call vimspector#Reset()'                                            , 'exit'],
-      \ 'j' : [':call vimspector#StepOver()'                                         , 'step over'],
-      \ 'k' : [':call vimspector#StepOut()'                                          , 'step out'],
-      \ 'l' : [':call vimspector#StepInto()'                                         , 'step into'],
-      \ 'r' : [':call vimspector#RunToCursor()'                                      , 'run to cursor'],
-      \ 'R' : [':call vimspector#Restart()'                                          , 'restart'],
-      \ '?' : [':call AddToWatch()'                                                  , 'add to watch'],
-      \ 'b' : {
-        \ 'name' : '+breakpoint' ,
-        \ 's' : [':call vimspector#ToggleBreakpoint()'                               , 'standard'],
-        \ 'c' : [':call vimspector#ToggleConditionalBreakpoint()'                    , 'conditional'],
-        \ 'D' : [':call vimspector#ClearBreakpoints()'                               , 'delete all'],
-        \ },
-      \ 'w' : {
-        \ 'name' : '+window' ,
-        \ 'c' : [':call GotoWindow(g:vimspector_session_windows.code)'               , 'code'],
-        \ 't' : [':call GotoWindow(g:vimspector_session_windows.tagpage)'            , 'tagpage'],
-        \ 'v' : [':call GotoWindow(g:vimspector_session_windows.variables)'          , 'vars'],
-        \ 'w' : [':call GotoWindow(g:vimspector_session_windows.watches)'            , 'watches'],
-        \ 's' : [':call GotoWindow(g:vimspector_session_windows.stack_trace)'        , 'stack trace'],
-        \ 'o' : [':call GotoWindow(g:vimspector_session_windows.output)'             , 'output'],
-        \ },
-      \ }
-
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
