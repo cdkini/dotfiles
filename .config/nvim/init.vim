@@ -31,6 +31,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
         Plug 'glepnir/galaxyline.nvim'                              " Lightweight statusline  [plugins/theme/galaxyline.vim]
         Plug 'sainnhe/everforest'                                   " Pretty colors
         Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " v0.5.0 color support    [plugins/theme/treesitter.vim]
+        Plug 'jacoborus/tender.vim'
 
     " CODE:
         Plug 'ahmedkhalf/lsp-rooter.nvim'                           " Auto chdir using LSP
@@ -99,3 +100,4 @@ call plug#end()
     source $HOME/.config/nvim/settings/plugins/misc/maximizer.vim
     source $HOME/.config/nvim/settings/plugins/misc/startify.vim
     source $HOME/.config/nvim/settings/plugins/misc/whichkey.vim
+

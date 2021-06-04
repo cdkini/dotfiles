@@ -53,15 +53,15 @@ let g:which_key_map.b = {
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
-      \ 'B':  [':Gblame'                                                            , 'blame file'],
-      \ 'R':  ['<cmd>lua require"gitsigns".reset_buffer()'                          , 'which_key_ignore'],
       \ 'b':  ['<cmd>lua require"gitsigns".blame_line()<CR>'                        , 'blame hunk'],
+      \ 'B':  [':Gblame'                                                            , 'blame file'],
       \ 'c':  [':Gcommit'                                                           , 'commit'],
       \ 'g':  [':G'                                                                 , 'status'],
       \ 'h':  [':Gbrowse'                                                           , 'github'],
       \ 'l':  [':Glog'                                                              , 'log'],
       \ 'p':  ['<cmd>lua require"gitsigns".preview_hunk<CR>'                        , 'preview hunk'],
-      \ 'r':  ['<cmd>lua require"gitsigns".reset_hunk()'                            , 'which_key_ignore'],
+      \ 'r':  ['<cmd>lua require"gitsigns".reset_hunk()'                            , 'reset hunk'],
+      \ 'R':  ['<cmd>lua require"gitsigns".reset_buffer()'                          , 'reset file'],
       \ 's':  ['<cmd>lua require"gitsigns".stage_hunk()<CR>'                        , 'stage hunk'],
       \ 'u':  ['<cmd>lua require"gitsigns".undo_stage_hunk()<CR>'                   , 'undo stage hunk'],
       \ }
